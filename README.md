@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/TOHS5LQy)
 # Zadanie2 - Quiz
 
 Stwórz w C++ quiz konsolowy zadający użytkownikowi około 5 pytań i zliczający wynik punktowy. Zrefaktoryzuj kod, który możesz wybrać np. stąd:
