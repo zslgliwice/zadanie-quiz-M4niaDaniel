@@ -1,6 +1,8 @@
 #include <iostream>
 #include <windows.h>
 
+#pragma execution_character_set( "utf-8" )
+
 using namespace std;
 
 string name;
@@ -19,15 +21,17 @@ void question_request(string question, string ans_a, string ans_b, string ans_c,
     if(anwser == ans){
         cout << "Dobra odpowiedź" << endl;
         anwsers += 1;
+        Sleep(1000);
     }
     else{
         cout << "Zła odpowiedź" << endl;
+        Sleep(1000);
     }
     system("CLS");
 }
 
 int main(void){
-    setlocale(LC_CTYPE, "Polish");
+    WINAPI SetConsoleOutputCP(65001);
     cout << "Podaj Imię: ";
     getline(cin, name);
     system("CLS");
@@ -38,6 +42,7 @@ int main(void){
     }
     while(i > 0);
     question_request("Ile rąk ma człowiek", "1", "2", "3", "b");
-    cout << "Ilość poprawnych odpowiedzi: " << anwsers;
+    cout << name << ", ilość poprawnych odpowiedzi: " << anwsers;
+    Sleep(2000);
     return 0;
 }
