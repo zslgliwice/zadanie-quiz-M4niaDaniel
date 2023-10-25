@@ -1,5 +1,4 @@
-#include <iostream>
-#include <windows.h>
+#include <assets.h>
 
 #pragma execution_character_set( "utf-8" )
 
