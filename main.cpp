@@ -41,7 +41,7 @@ int main(void){
     }
     while(i > 0);
     question_request("Ile rąk ma człowiek", "1", "2", "3", "b");
-    cout << name << ", ilość poprawnych odpowiedzi: " << anwsers;
+    cout << "Gratuluję" << name << ", ilość poprawnych odpowiedzi: " << anwsers;
     Sleep(2000);
     return 0;
 }
