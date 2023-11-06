@@ -1,48 +1,66 @@
-#include <assets.h>
+#include "assets.h"
 
 #pragma execution_character_set( "utf-8" )
 
 using namespace std;
 
+HANDLE console;
 string name;
 int i = 3;
-int anwsers;
+int score;
 
 void question_request(string question, string ans_a, string ans_b, string ans_c, string ans){
-    system("CLS");
-    cout << question << " ?" << endl;
+    system("cls");
+    cout << question << "?" << endl;
     cout << "a) " << ans_a << endl;
     cout << "b) " << ans_b << endl;
     cout << "c) " << ans_c << endl;
     cout << "Twoja Odpowiedź(a,b,c): ";
     string anwser;
     getline(cin, anwser);
+    system("cls");
     if(anwser == ans){
+        SetConsoleTextAttribute(console, 10 | FOREGROUND_INTENSITY);
         cout << "Dobra odpowiedź" << endl;
-        anwsers += 1;
+        score += 1;
         Sleep(1000);
     }
     else{
+        SetConsoleTextAttribute(console, 12 | FOREGROUND_INTENSITY);
         cout << "Zła odpowiedź" << endl;
         Sleep(1000);
     }
-    system("CLS");
+    system("cls");
+    SetConsoleTextAttribute(console, 15 | FOREGROUND_INTENSITY);
 }
 
 int main(void){
+    MessageBoxW( NULL, L"Czy na pewno chcesz rozpocząć Quiz", L"Umowa z Szatanem", MB_ICONQUESTION | MB_OK );  
+    console = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(console, 15 | FOREGROUND_INTENSITY);
     WINAPI SetConsoleOutputCP(65001);
     cout << "Podaj Imię: ";
     getline(cin, name);
-    system("CLS");
+    system("cls");
     do{
         cout << i << "...";
         i--;
         Sleep(1000);
     }
     while(i > 0);
-    question_request("Ile rąk ma człowiek", "1", "2", "3", "b");
-    question_request("Czy dla człowieka dieta vege jest zrdowa", "tak", "nie", "może", "b");
-    cout << "Gratuluję" << name << ", ilość poprawnych odpowiedzi: " << anwsers;
+    question_request("Czym jest kot Schrödinger'a", "Zwykłym kotkiem", "Słodkim, anime koto-chłopcem", "reprezentuje 2 stany na raz(życie i śmierć)", "c");
+    question_request("Czym jest zjawisko spagettizacji", "Jedzenie makaronu spagetti (mniam)", "Gdy zbliżysz sie do czarnej dziury i ona robi z ciebie makaron", "konwesja stringa w C++ na spagetti", "b");
+    question_request("Jaki jest wzór na siłę z jaką oddziałują na siebie dwa obiekty z masą obiektu 1 - m₁ i masą obiektu 2 - m₂", "F = G · m₁ · m₂ / r² · e", "F = G · m₁ · m₂ / r²", "F = G · m₁ · m₂ / r · e", "a");
+    question_request("Ile wynosi prędkość światła", "300 000 km/h", "161874.98 INM/s", "340 m/s", "b");
+    question_request("Z jaką siłą oddziałuje 70 kg na powierzchnię naszej planety", "700N", "7kN", "70kg", "a");
+    question_request("Czy to prawda że masa zakrzywia czasoprzestrzeń", "Tak", "Nie", "Żadne z powyższych", "a");
+    cout << "Gratuluję " << name << ", ilość poprawnych odpowiedzi: " << score;
+    if(score >= 5){
+        PlaySoundA("Victory.wav", NULL, SND_FILENAME);
+    }
+    else{
+        PlaySoundA("gameOver.wav", NULL, SND_FILENAME);
+    }
     Sleep(2000);
     return 0;
 }
