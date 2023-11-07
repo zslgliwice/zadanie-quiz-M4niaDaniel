@@ -35,7 +35,7 @@ void question_request(string question, string ans_a, string ans_b, string ans_c,
 }
 
 int main(void){
-    MessageBoxW( NULL, L"Czy na pewno chcesz rozpocząć Quiz", L"Umowa z Szatanem", MB_ICONQUESTION | MB_OK );  
+    MessageBoxW( NULL, L"Czy na pewno chcesz rozpocząć Quiz?", L"Umowa z Szatanem", MB_ICONQUESTION | MB_OK );  
     console = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(console, 15 | FOREGROUND_INTENSITY);
     WINAPI SetConsoleOutputCP(65001);
