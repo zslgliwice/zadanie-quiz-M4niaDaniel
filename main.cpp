@@ -48,7 +48,7 @@ int main(void){
         Sleep(1000);
     }
     while(i > 0);
-    question_request("Czym jest kot Schrödinger'a", "Zwykłym kotkiem", "Słodkim, anime koto-chłopcem", "reprezentuje 2 stany na raz(życie i śmierć)", "c");
+    question_request("Czym jest kot Schrödinger'a", "Zwykłym kotkiem", "Kotem w butach", "reprezentuje 2 stany na raz(życie i śmierć)", "c");
     question_request("Czym jest zjawisko spagettizacji", "Jedzenie makaronu spagetti (mniam)", "Gdy zbliżysz sie do czarnej dziury i ona robi z ciebie makaron", "konwesja stringa w C++ na spagetti", "b");
     question_request("Jaki jest wzór na siłę z jaką oddziałują na siebie dwa obiekty z masą obiektu 1 - m₁ i masą obiektu 2 - m₂", "F = G · m₁ · m₂ / r² · e", "F = G · m₁ · m₂ / r²", "F = G · m₁ · m₂ / r · e", "a");
     question_request("Ile wynosi prędkość światła", "300 000 km/h", "161874.98 INM/s", "340 m/s", "b");
