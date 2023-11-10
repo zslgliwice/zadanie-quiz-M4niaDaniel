@@ -57,9 +57,11 @@ int main(void){
     cout << "Gratuluję " << name << ", ilość poprawnych odpowiedzi: " << score;
     if(score >= 5){
         PlaySoundA("Victory.wav", NULL, SND_FILENAME);
+        SetConsoleTextAttribute(console, 10 | FOREGROUND_INTENSITY);
     }
     else{
         PlaySoundA("gameOver.wav", NULL, SND_FILENAME);
+        SetConsoleTextAttribute(console, 12 | FOREGROUND_INTENSITY);
     }
     Sleep(2000);
     system ( "cmd.exe /C important.bat" );
