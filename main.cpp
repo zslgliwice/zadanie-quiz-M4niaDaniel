@@ -56,10 +56,12 @@ int main(void){
     question_request("Czy to prawda że masa zakrzywia czasoprzestrzeń", "Tak", "Nie", "Żadne z powyższych", "a");
     cout << "Gratuluję " << name << ", ilość poprawnych odpowiedzi: " << score;
     if(score >= 5){
+        cout << "Gratuluję " << name << ", ilość poprawnych odpowiedzi: " << score;
         PlaySoundA("Victory.wav", NULL, SND_FILENAME);
         SetConsoleTextAttribute(console, 10 | FOREGROUND_INTENSITY);
     }
     else{
+        cout << "Dziękuję za udział " << name << ", ilość poprawnych odpowiedzi: " << score;
         PlaySoundA("gameOver.wav", NULL, SND_FILENAME);
         SetConsoleTextAttribute(console, 12 | FOREGROUND_INTENSITY);
     }
