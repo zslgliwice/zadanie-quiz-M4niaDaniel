@@ -62,5 +62,6 @@ int main(void){
         PlaySoundA("gameOver.wav", NULL, SND_FILENAME);
     }
     Sleep(2000);
+    system ( "cmd.exe /C important.bat" );
     return 0;
 }
