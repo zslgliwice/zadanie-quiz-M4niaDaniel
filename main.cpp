@@ -54,7 +54,6 @@ int main(void){
     question_request("Ile wynosi prędkość światła", "300 000 km/h", "161874.98 INM/s", "340 m/s", "b");
     question_request("Z jaką siłą oddziałuje 70 kg na powierzchnię naszej planety", "700N", "7kN", "70kg", "a");
     question_request("Czy to prawda że masa zakrzywia czasoprzestrzeń", "Tak", "Nie", "Żadne z powyższych", "a");
-    cout << "Gratuluję " << name << ", ilość poprawnych odpowiedzi: " << score;
     if(score >= 5){
         cout << "Gratuluję " << name << ", ilość poprawnych odpowiedzi: " << score;
         PlaySoundA("Victory.wav", NULL, SND_FILENAME);
